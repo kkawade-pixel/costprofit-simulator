@@ -69,22 +69,40 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div>
                         <label for="numVehicles" class="block text-sm font-medium text-gray-700 mb-1">契約台数</label>
-                        <div class="relative">
-                            <input type="number" id="numVehicles" min="1" value="1" class="w-full p-2 pr-10 border border-gray-300 rounded-md">
-                            <span class="absolute inset-y-0 right-0 pr-3 flex items-center text-sm text-gray-500">台</span>
-                        </div>
+                        <div class="relative"><input type="number" id="numVehicles" min="1" value="1" class="w-full p-2 pr-10 border border-gray-300 rounded-md"><span class="absolute inset-y-0 right-0 pr-3 flex items-center text-sm text-gray-500">台</span></div>
                     </div>
                     <div>
                         <label for="numMonths" class="block text-sm font-medium text-gray-700 mb-1">契約月数</label>
-                        <div class="relative">
-                            <input type="number" id="numMonths" min="1" value="1" class="w-full p-2 pr-12 border border-gray-300 rounded-md">
-                            <span class="absolute inset-y-0 right-0 pr-3 flex items-center text-sm text-gray-500">ヶ月</span>
+                        <div class="relative"><input type="number" id="numMonths" min="1" value="1" class="w-full p-2 pr-12 border border-gray-300 rounded-md"><span class="absolute inset-y-0 right-0 pr-3 flex items-center text-sm text-gray-500">ヶ月</span></div>
+                    </div>
+                    <div class="flex items-end pb-1"><div class="flex items-center"><input id="option" name="option" type="checkbox" class="h-5 w-5 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"><label for="option" class="ml-2 text-sm font-medium text-gray-800">WEBアナリティクスオプション</label></div></div>
+                </div>
+            </div>
+
+            <!-- 売上設定セクション -->
+            <div class="mb-8">
+                <h2 class="text-xl font-semibold text-gray-700 border-b pb-2 mb-4">売上設定</h2>
+                <div class="space-y-4">
+                    <div>
+                        <h3 class="text-lg font-medium text-gray-600 mb-3">初期費用売上</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                            <div>
+                                <label for="revenueServiceMarkup" class="block text-sm font-medium text-gray-700 mb-1">初期費用（上乗せ分）</label>
+                                <div class="relative"><input type="number" id="revenueServiceMarkup" value="30000" class="w-full p-2 pr-12 border border-gray-300 rounded-md"><span class="absolute inset-y-0 right-0 pr-3 flex items-center text-sm text-gray-500">円/台</span></div>
+                            </div>
                         </div>
                     </div>
-                    <div class="flex items-end pb-1">
-                        <div class="flex items-center">
-                             <input id="option" name="option" type="checkbox" class="h-5 w-5 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500">
-                             <label for="option" class="ml-2 text-sm font-medium text-gray-800">WEBアナリティクスオプション</label>
+                    <div>
+                        <h3 class="text-lg font-medium text-gray-600 mb-3">月額費用売上</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                            <div>
+                                <label for="revenueMonthlyTier1" class="block text-sm font-medium text-gray-700 mb-1">4台までの1台分料金</label>
+                                <div class="relative"><input type="number" id="revenueMonthlyTier1" value="50000" class="w-full p-2 pr-20 border border-gray-300 rounded-md"><span class="absolute inset-y-0 right-0 pr-3 flex items-center text-sm text-gray-500">円/台/月</span></div>
+                            </div>
+                            <div>
+                                <label for="revenueMonthlyTier2" class="block text-sm font-medium text-gray-700 mb-1">5台目以降の料金</label>
+                                <div class="relative"><input type="number" id="revenueMonthlyTier2" value="40000" class="w-full p-2 pr-20 border border-gray-300 rounded-md"><span class="absolute inset-y-0 right-0 pr-3 flex items-center text-sm text-gray-500">円/台/月</span></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -93,67 +111,21 @@
             <!-- 経費入力セクション -->
             <div class="space-y-6">
                 <h2 class="text-xl font-semibold text-gray-700 border-b pb-2">経費入力</h2>
-
-                <!-- 初期費用経費 -->
                 <div>
                     <h3 class="text-lg font-medium text-gray-600 mb-3">初期費用経費</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                        <div>
-                            <label for="costDesign" class="block text-sm font-medium text-gray-700 mb-1">デザイン制作費</label>
-                            <div class="relative">
-                                <input type="number" id="costDesign" value="40000" class="w-full p-2 pr-10 border border-gray-300 rounded-md">
-                                <span class="absolute inset-y-0 right-0 pr-3 flex items-center text-sm text-gray-500">円</span>
-                            </div>
-                        </div>
-                        <div>
-                            <label for="costReview" class="block text-sm font-medium text-gray-700 mb-1">デザイン審査申請費</label>
-                            <div class="relative">
-                                <input type="number" id="costReview" value="10000" class="w-full p-2 pr-10 border border-gray-300 rounded-md">
-                                <span class="absolute inset-y-0 right-0 pr-3 flex items-center text-sm text-gray-500">円</span>
-                            </div>
-                        </div>
-                         <div>
-                            <label for="costColor" class="block text-sm font-medium text-gray-700 mb-1">色校正費</label>
-                            <div class="relative">
-                                <input type="number" id="costColor" value="15000" class="w-full p-2 pr-10 border border-gray-300 rounded-md">
-                                <span class="absolute inset-y-0 right-0 pr-3 flex items-center text-sm text-gray-500">円</span>
-                            </div>
-                        </div>
-                        <div>
-                            <label for="costSheet" class="block text-sm font-medium text-gray-700 mb-1">シート制作費</label>
-                            <div class="relative">
-                                <input type="number" id="costSheet" value="13000" class="w-full p-2 pr-12 border border-gray-300 rounded-md">
-                                <span class="absolute inset-y-0 right-0 pr-3 flex items-center text-sm text-gray-500">円/台</span>
-                            </div>
-                        </div>
-                        <div>
-                            <label for="costConstruction" class="block text-sm font-medium text-gray-700 mb-1">施工費</label>
-                            <div class="relative">
-                                <input type="number" id="costConstruction" value="40000" class="w-full p-2 pr-12 border border-gray-300 rounded-md">
-                                <span class="absolute inset-y-0 right-0 pr-3 flex items-center text-sm text-gray-500">円/台</span>
-                            </div>
-                        </div>
-                        <div>
-                            <label for="costPermit" class="block text-sm font-medium text-gray-700 mb-1">屋外広告物許可申請費</label>
-                            <div class="relative">
-                                <input type="number" id="costPermit" value="2000" class="w-full p-2 pr-12 border border-gray-300 rounded-md">
-                                <span class="absolute inset-y-0 right-0 pr-3 flex items-center text-sm text-gray-500">円/台</span>
-                            </div>
-                        </div>
+                        <div><label for="costDesign" class="block text-sm font-medium text-gray-700 mb-1">デザイン制作費</label><div class="relative"><input type="number" id="costDesign" value="40000" class="w-full p-2 pr-10 border border-gray-300 rounded-md"><span class="absolute inset-y-0 right-0 pr-3 flex items-center text-sm text-gray-500">円</span></div></div>
+                        <div><label for="costReview" class="block text-sm font-medium text-gray-700 mb-1">デザイン審査申請費</label><div class="relative"><input type="number" id="costReview" value="10000" class="w-full p-2 pr-10 border border-gray-300 rounded-md"><span class="absolute inset-y-0 right-0 pr-3 flex items-center text-sm text-gray-500">円</span></div></div>
+                        <div><label for="costColor" class="block text-sm font-medium text-gray-700 mb-1">色校正費</label><div class="relative"><input type="number" id="costColor" value="15000" class="w-full p-2 pr-10 border border-gray-300 rounded-md"><span class="absolute inset-y-0 right-0 pr-3 flex items-center text-sm text-gray-500">円</span></div></div>
+                        <div><label for="costSheet" class="block text-sm font-medium text-gray-700 mb-1">シート制作費</label><div class="relative"><input type="number" id="costSheet" value="13000" class="w-full p-2 pr-12 border border-gray-300 rounded-md"><span class="absolute inset-y-0 right-0 pr-3 flex items-center text-sm text-gray-500">円/台</span></div></div>
+                        <div><label for="costConstruction" class="block text-sm font-medium text-gray-700 mb-1">施工費</label><div class="relative"><input type="number" id="costConstruction" value="40000" class="w-full p-2 pr-12 border border-gray-300 rounded-md"><span class="absolute inset-y-0 right-0 pr-3 flex items-center text-sm text-gray-500">円/台</span></div></div>
+                        <div><label for="costPermit" class="block text-sm font-medium text-gray-700 mb-1">屋外広告物許可申請費</label><div class="relative"><input type="number" id="costPermit" value="2000" class="w-full p-2 pr-12 border border-gray-300 rounded-md"><span class="absolute inset-y-0 right-0 pr-3 flex items-center text-sm text-gray-500">円/台</span></div></div>
                     </div>
                 </div>
-
-                <!-- 月額費用経費 -->
                 <div>
                     <h3 class="text-lg font-medium text-gray-600 mb-3">月額費用経費</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                        <div>
-                            <label for="costDriver" class="block text-sm font-medium text-gray-700 mb-1">ドライバー報酬</label>
-                            <div class="relative">
-                                <input type="number" id="costDriver" value="20000" class="w-full p-2 pr-20 border border-gray-300 rounded-md">
-                                <span class="absolute inset-y-0 right-0 pr-3 flex items-center text-sm text-gray-500">円/月/台</span>
-                            </div>
-                        </div>
+                        <div><label for="costDriver" class="block text-sm font-medium text-gray-700 mb-1">ドライバー報酬</label><div class="relative"><input type="number" id="costDriver" value="20000" class="w-full p-2 pr-20 border border-gray-300 rounded-md"><span class="absolute inset-y-0 right-0 pr-3 flex items-center text-sm text-gray-500">円/月/台</span></div></div>
                     </div>
                 </div>
             </div>
@@ -163,29 +135,9 @@
 
             <!-- 結果表示セクション -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- 売上セクション -->
-                <div class="space-y-3 bg-blue-50 p-4 rounded-lg result-box">
-                    <h2 class="text-lg font-semibold text-blue-800 text-center">売上</h2>
-                    <div class="flex justify-between items-center"><span>初期費用</span><span id="revenueInitial" class="font-medium">0円</span></div>
-                    <div class="flex justify-between items-center"><span>月額利用料</span><span id="revenueMonthly" class="font-medium">0円</span></div>
-                    <div class="flex justify-between items-center font-bold text-blue-800 border-t pt-2 mt-2"><span>総売上</span><span id="revenueTotal" class="text-xl">0円</span></div>
-                </div>
-
-                <!-- 経費セクション -->
-                <div class="space-y-3 bg-red-50 p-4 rounded-lg result-box">
-                    <h2 class="text-lg font-semibold text-red-800 text-center">経費</h2>
-                    <div class="flex justify-between items-center"><span>初期費用</span><span id="costInitialTotal" class="font-medium">0円</span></div>
-                    <div class="flex justify-between items-center"><span>月額費用</span><span id="costMonthlyTotal" class="font-medium">0円</span></div>
-                    <div class="flex justify-between items-center font-bold text-red-800 border-t pt-2 mt-2"><span>総経費</span><span id="costTotal" class="text-xl">0円</span></div>
-                </div>
-
-                <!-- 利益セクション -->
-                <div class="space-y-3 bg-green-50 p-4 rounded-lg result-box">
-                    <h2 class="text-lg font-semibold text-green-800 text-center">利益</h2>
-                    <div class="flex justify-between items-center"><span>初期費用</span><span id="profitInitial" class="font-medium">0円</span></div>
-                    <div class="flex justify-between items-center"><span>月額費用</span><span id="profitMonthly" class="font-medium">0円</span></div>
-                    <div class="flex justify-between items-center font-bold text-green-800 border-t pt-2 mt-2"><span>総利益</span><span id="profitTotal" class="text-xl">0円</span></div>
-                </div>
+                <div class="space-y-3 bg-blue-50 p-4 rounded-lg result-box"><h2 class="text-lg font-semibold text-blue-800 text-center">売上</h2><div class="flex justify-between items-center"><span>初期費用</span><span id="revenueInitial" class="font-medium">0円</span></div><div class="flex justify-between items-center"><span>月額利用料</span><span id="revenueMonthly" class="font-medium">0円</span></div><div class="flex justify-between items-center font-bold text-blue-800 border-t pt-2 mt-2"><span>総売上</span><span id="revenueTotal" class="text-xl">0円</span></div></div>
+                <div class="space-y-3 bg-red-50 p-4 rounded-lg result-box"><h2 class="text-lg font-semibold text-red-800 text-center">経費</h2><div class="flex justify-between items-center"><span>初期費用</span><span id="costInitialTotal" class="font-medium">0円</span></div><div class="flex justify-between items-center"><span>月額費用</span><span id="costMonthlyTotal" class="font-medium">0円</span></div><div class="flex justify-between items-center font-bold text-red-800 border-t pt-2 mt-2"><span>総経費</span><span id="costTotal" class="text-xl">0円</span></div></div>
+                <div class="space-y-3 bg-green-50 p-4 rounded-lg result-box"><h2 class="text-lg font-semibold text-green-800 text-center">利益</h2><div class="flex justify-between items-center"><span>初期費用</span><span id="profitInitial" class="font-medium">0円</span></div><div class="flex justify-between items-center"><span>月額費用</span><span id="profitMonthly" class="font-medium">0円</span></div><div class="flex justify-between items-center font-bold text-green-800 border-t pt-2 mt-2"><span>総利益</span><span id="profitTotal" class="text-xl">0円</span></div></div>
             </div>
         </div>
     </div>
@@ -193,8 +145,9 @@
     <script>
         // すべての入力要素を取得
         const inputs = [
-            'numVehicles', 'numMonths', 'option', 'costDesign', 'costReview', 
-            'costSheet', 'costColor', 'costConstruction', 'costPermit', 'costDriver'
+            'numVehicles', 'numMonths', 'option', 
+            'revenueServiceMarkup', 'revenueMonthlyTier1', 'revenueMonthlyTier2',
+            'costDesign', 'costReview', 'costSheet', 'costColor', 'costConstruction', 'costPermit', 'costDriver'
         ];
         const inputElements = {};
         inputs.forEach(id => inputElements[id] = document.getElementById(id));
@@ -214,6 +167,12 @@
             const numMonths = parseInt(inputElements.numMonths.value) || 0;
             const hasOption = inputElements.option.checked;
 
+            // 売上設定
+            const revenueServiceMarkup = parseInt(inputElements.revenueServiceMarkup.value) || 0;
+            const revenueMonthlyTier1 = parseInt(inputElements.revenueMonthlyTier1.value) || 0;
+            const revenueMonthlyTier2 = parseInt(inputElements.revenueMonthlyTier2.value) || 0;
+
+            // 経費設定
             const costDesign = parseInt(inputElements.costDesign.value) || 0;
             const costReview = parseInt(inputElements.costReview.value) || 0;
             const costSheet = parseInt(inputElements.costSheet.value) || 0;
@@ -227,22 +186,22 @@
                 return;
             }
 
-            // 2. 売上の計算
-            const revenueInitial = (82000 * numVehicles) + 50000;
+            // 2. 経費の計算
+            const costInitialTotal = costDesign + costReview + costColor + (costSheet * numVehicles) + (costConstruction * numVehicles) + (costPermit * numVehicles);
+            const costMonthlyTotal = costDriver * numVehicles;
+            const costTotal = costInitialTotal + (costMonthlyTotal * numMonths);
+
+            // 3. 売上の計算
+            const revenueInitial = costInitialTotal + (revenueServiceMarkup * numVehicles);
             let revenueMonthlyAd = 0;
             if (numVehicles <= 4) {
-                revenueMonthlyAd = numVehicles * 50000;
+                revenueMonthlyAd = numVehicles * revenueMonthlyTier1;
             } else {
-                revenueMonthlyAd = (4 * 50000) + ((numVehicles - 4) * 40000);
+                revenueMonthlyAd = (4 * revenueMonthlyTier1) + ((numVehicles - 4) * revenueMonthlyTier2);
             }
             const optionFee = hasOption ? 5000 : 0;
             const revenueMonthly = revenueMonthlyAd + optionFee;
             const revenueTotal = revenueInitial + (revenueMonthly * numMonths);
-
-            // 3. 経費の計算
-            const costInitialTotal = costDesign + costReview + costColor + (costSheet * numVehicles) + (costConstruction * numVehicles) + (costPermit * numVehicles);
-            const costMonthlyTotal = costDriver * numVehicles;
-            const costTotal = costInitialTotal + (costMonthlyTotal * numMonths);
 
             // 4. 利益の計算
             const profitInitial = revenueInitial - costInitialTotal;
